@@ -41,7 +41,7 @@ Let's study the signature of List.map (just the relevant part) to see why is tha
 {% highlight scala %}
 final override def map[B, That](f: scala.Function1[A, B])(implicit bf: ...) : That = ...
 {% endhighlight %}
-Notice that argument **f** has to be a **Function[Int, Int]**. Yet somehow we passed a method and compiler didn't throw an error on us.
+Notice that argument **f** has to be a **Function[Int, Int]**. Yet somehow we passed a method and compiler didn't throw an error at us.
 How come? The answer is: there is an [implicit conversion under the hood][scala-method-conversion].
 
 The conversion is based on a trick called *eta-expansion* or *eta-abstraction* in which you expand *lambda expression* (in our case that would be **method**) to *lambda abstraction* (**methodAsFunction**).
