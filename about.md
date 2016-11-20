@@ -18,7 +18,7 @@ you'll develop bad posture and get fat. Start working out instead of spending th
 Not to mention that being more open, friendly and confident will make you better with girls.
 {: .text-justify}
 
-Since I am mastering all of the above for a few years now I belive I have something valuable to share.
+Since I am mastering all of the above for a few years now I believe I have something valuable to share.
 Expect posts about functional programming, Scala, reactive systems, programming books reviews,
  proper strength training, negotiating a raise and more.
 {: .text-justify}
