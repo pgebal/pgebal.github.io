@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "A short one: A method, a function and an eta-expansion"
-date:   2016-11-20 18:00:00 +0100
+date:   2016-11-20 20:11:00 +0100
 categories: scala update
 tags: scala functional-programming
+excerpt: How Scala uses eta-expansion to make your life easier.
 ---
 A method:
 {% highlight scala %}
