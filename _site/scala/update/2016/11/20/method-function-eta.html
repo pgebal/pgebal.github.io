@@ -62,7 +62,7 @@
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">A short one: A method, a function and an eta-expansion</h1>
-    <p class="post-meta"><time datetime="2016-11-20T18:00:00+01:00" itemprop="datePublished">Nov 20, 2016</time></p>
+    <p class="post-meta"><time datetime="2016-11-20T20:11:00+01:00" itemprop="datePublished">Nov 20, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
@@ -97,7 +97,7 @@
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">final</span> <span class="k">override</span> <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">scala.Function1</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">...</span><span class="o">)</span> <span class="k">:</span> <span class="kt">That</span> <span class="o">=</span> <span class="o">...</span></code></pre></figure>
 
-<p>Notice that argument <strong>f</strong> has to be a <strong>Function[Int, Int]</strong>. Yet somehow we passed a method and compiler didn’t throw an error on us.
+<p>Notice that argument <strong>f</strong> has to be a <strong>Function[Int, Int]</strong>. Yet somehow we passed a method and compiler didn’t throw an error at us.
 How come? The answer is: there is an <a href="http://scala-lang.org/files/archive/spec/2.11/06-expressions.html#method-conversions">implicit conversion under the hood</a>.</p>
 
 <p>The conversion is based on a trick called <em>eta-expansion</em> or <em>eta-abstraction</em> in which you expand <em>lambda expression</em> (in our case that would be <strong>method</strong>) to <em>lambda abstraction</em> (<strong>methodAsFunction</strong>).</p>
