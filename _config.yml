@@ -23,6 +23,8 @@ github_username: pgebal
 disqus:
   shortname: blog-h9v460x5rl
 
+google_analytics: UA-87945099-1
+
 # Build settings
 markdown: kramdown
 theme: minima
