@@ -30,11 +30,14 @@ case class Color(name: String, red: Int, green: Int, blue: Int)
 {% endhighlight %}
 
 Pros:
-- it works.
-
+<ul>
+<li> it works. </li>
+</ul>
 Cons:
-- **Color** knows how to serialize itself to JSON - not a clean solution,
-- we can't do the same for classes from third party libraries. We just can't make them extend traits of our preference.
+<ul>
+<li> <b>Color</b> knows how to serialize itself to JSON - not a clean solution, </li>
+<li> we can't do the same for classes from third party libraries. We just can't make them extend traits of our preference. </li>
+</ul>
 {: .text-justify}
 
 Let's think of something better.
