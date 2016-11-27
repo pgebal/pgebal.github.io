@@ -30,11 +30,11 @@ case class Color(name: String, red: Int, green: Int, blue: Int)
 {% endhighlight %}
 
 Pros:
- * it works.
+* it works.
 
 Cons:
- * **Color** knows how to serialize itself to JSON - not a clean solution,
- * we can't do the same for classes from third party libraries. We just can't make them extend traits of our preference.
+* **Color** knows how to serialize itself to JSON - not a clean solution,
+* we can't do the same for classes from third party libraries. We just can't make them extend traits of our preference.
 
 Let's think of something better.
 How about sticking to the Single Responsibility Principle and pushing serialization logic out of the class?
