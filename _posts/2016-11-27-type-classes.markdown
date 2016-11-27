@@ -14,7 +14,7 @@ Let's have a class that we want to serialize to JSON:
 case class Color(name: String, red: Int, green: Int, blue: Int)
 {% endhighlight %}
 
-If we would go Java style, we might have come up with this:
+If we went Java style, we might come up with this:
 {% highlight scala %}
 type Json = String
 
@@ -60,7 +60,7 @@ val yellow = Color("yellow", 255, 255, 0)
 val json: Json = ColorJsonSerializer.toJson(yellow)
 {% endhighlight %}
 to get a JSON representation of yellow.
-That's better then the previous solution, but we can pimp it using some implicit magic.
+That's better than the previous solution, but we can pimp it using some implicit magic.
 First let's make **JsonSerializer.toJson** method look like it's a method of **Color** class.
 To achieve that, let's add an implicit wrapper over **Color**.
 {: .text-justify}
