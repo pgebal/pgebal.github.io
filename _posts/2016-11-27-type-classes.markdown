@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Type class pattern"
-date:   2016-11-27 18:00:00 +0100
+date:   2016-11-27 11:00:00 +0100
 categories: scala update
 tags: scala functional-programming spray-json
 excerpt: An explanation of type class pattern.
@@ -35,6 +35,7 @@ Pros:
 Cons:
 - **Color** knows how to serialize itself to JSON - not a clean solution,
 - we can't do the same for classes from third party libraries. We just can't make them extend traits of our preference.
+{: .text-justify}
 
 Let's think of something better.
 How about sticking to the Single Responsibility Principle and pushing serialization logic out of the class?
@@ -59,6 +60,7 @@ to get a JSON representation of yellow.
 That's better then the previous solution, but we can pimp it using some implicit magic.
 First let's make **JsonSerializer.toJson** method look like it's a method of **Color** class.
 To achieve that, let's add an implicit wrapper over **Color**.
+{: .text-justify}
 
 {% highlight scala %}
 implicit class JsonSerializerWrapper[T](t: T) {
@@ -89,10 +91,12 @@ We achieved something great.
 We built a mechanism that allows us to add method to existing classes.
 **JsonSerializer[T]** is a type class.
 This concept of enriching APIs is called type class pattern.
+{: .text-justify}
 
 This example was heavily inspired by a piece of code you can find in [a tutorial for JSON library spray-json][spray-type-classes].
 To deepen the understanding of type classes let's study an example of how smart people behind spray-json use that pattern.
 Here's a piece of code from spray-json tutorial enriched with my comments:
+{: .text-justify}
 {% highlight scala %}
 import spray.json.{JsArray, JsNumber, JsString, JsValue, RootJsonFormat}
 
