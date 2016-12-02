@@ -53,7 +53,7 @@ val a: Option[A] = None
 
 val default: B = b.getOrElse(new B)
 {% endhighlight %}
-Note that in the last line we could use **a** instead of **b** and the code would stay valid. That's thanks to <nobr><b>[B >: A]</b></nobr> bound in **getOrElse** method definition. If it wasn't for that **a.getOrElse** would not accept an argument of type **B**. Keep this example in mind and embrace [Liskov substitution principle][liskov-substitution-principle] when implementing your own classes with type parameters.
+In the last line we could use **a** instead of **b** and our code would stay valid. That's thanks to <nobr><b>[B >: A]</b></nobr> bound in **getOrElse** method definition. If it wasn't for that **a.getOrElse** would not accept an argument of type **B**. Keep this example in mind and embrace [Liskov substitution principle][liskov-substitution-principle] when implementing your own classes with type parameters.
 {: .text-justify}
 
 [functional-programming-in-scala-affiliate-link]: https://www.amazon.com/gp/product/1617290653/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1617290653&linkCode=as2&tag=pawelgebal-20&linkId=f3ec949cadbc0ff936a5aae1dcc51c0a
