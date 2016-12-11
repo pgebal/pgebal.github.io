@@ -13,20 +13,18 @@ Version 1.0.1 was released in December 2016.
 I gave it a try, I am happy with it and I want to share that happiness with you.
 {: .text-justify}
 
-## How it works (in a nutshell)?
+## How it works (in a nutshell)? ##
 Quill provides a Quoted Domain Specific Language that allows to
 type query in Scala in a way as you were using a collection and runs it in a supported language.
 To achieve that two things happen:
-<ol>
-<li> query is translated (macros!) at compile time to an Abstract Syntax Tree </li>
-<li> tree is normalized and then translated to a chosen query language depending on provided context.
- SQL and CQL are supported.</li>
- </ol>
+* query is translated (macros!) at compile time to an Abstract Syntax Tree
+* tree is normalized and then translated to a chosen query language depending on provided context.
+ SQL and CQL are supported.
  {: .text-justify}
 
 All of this is backed by a [strong science][quill-science].
 
-## Fast start
+## Fast start ##
 This section will let you play with Quill blazingly fast.
 
 We'll be using MySQL database.
@@ -195,14 +193,14 @@ private def selectJohnDoe: Future[Option[Account]] = {
 }
 {% endhighlight %}
 
-## Asynchronous contexts
+## Asynchronous contexts ##
 Quill comes with multiple contexts for all relevant SQL dialects.
 You can use jdbc but if you need to be fully non-blocking pick **MysqlAsyncContext** or **PostgresAsnycContext** depending on which database you use.
 Both contexts support transactions and use [asynchronous database drivers][db-async] implemented on top of netty.
 {: .text-justify}
-## Gotchas
+## Gotchas ##
 
-#### Do not provide explicit types for quotations
+#### Do not provide explicit types for quotations ####
 Providing an explicit type for a quotation is a bad idea, because then type refinement cannot be applied at compile time.
 So rather don't do this:
 {: .text-justify}
@@ -214,13 +212,13 @@ def select: Quote[Query[String]] = quote {
 It will work but normalization and query generation will happen at runtime.
 {: .text-justify}
 
-#### Async drivers are poorly documented
+#### Async drivers are poorly documented ####
 **PostgresAsyncContext** and **MySqlAsyncContext** use them so be prepared for some code digging if things work other way than you expected.
 Use **JdbcContext** if you want to feel safe.
 {: .text-justify}
 
 
-## Further readings and videos
+## Further readings and videos ##
 * [Official Quill documentation][quill] - joins, transactions and so on, pure gold,
 * [Talk introducing Quill on Scala Days Berlin 2016][quill-video] - starts slow but the value you get goes up every minute,
 * [Post on scalac blog by Mateusz Bilski][scalac-blog] - good and long summary of Quill capabilities,
@@ -228,7 +226,7 @@ Use **JdbcContext** if you want to feel safe.
 * [Comparison between Phantom and Quill done by Quill devs][quill-cassandra].
 
 
-## Final thoughts
+## Final thoughts ##
 Quill looks solid and I like the brevity it provides.
 I'll stick to it in my projects.
 Stay tuned and be ready for more Quill posts.
