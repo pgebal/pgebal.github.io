@@ -7,7 +7,7 @@ tags: scala quill slick
 excerpt: Do it in a completely non-blocking manner.
 ---
 I like trying new things. When I was coding a microservice for
-my project I've decided to stay away from Slick and use [Quill][quill] instead.
+my project I decided to stay away from Slick and use [Quill][quill] instead.
 Quill is fresh and [growing][quill-popularity].
 Version 1.0.1 was released in December 2016.
 I gave it a try, I am happy with it and I want to share that happiness with you.
@@ -17,9 +17,11 @@ I gave it a try, I am happy with it and I want to share that happiness with you.
 Quill provides a Quoted Domain Specific Language that allows to
 type query in Scala in a way as you were using a collection and runs it in a supported language.
 To achieve that two things happen:
-1. query is translated (macros!) at compile time to an Abstract Syntax Tree
-2. tree is normalized and then translated to a chosen query language depending on provided context.
- SQL and CQL are supported.
+<ol>
+<li> query is translated (macros!) at compile time to an Abstract Syntax Tree </li>
+<li> tree is normalized and then translated to a chosen query language depending on provided context.
+ SQL and CQL are supported.</li>
+ </ol>
  {: .text-justify}
 
 All of this is backed by a [strong science][quill-science].
@@ -174,7 +176,6 @@ Jack
 on your console.
 
 We did not put any boilerplate that maps table or column names to case classes and fields.
-It' simply not needed.
 Quill deduces database schema from case class definitions using naming strategies that you provide when creating a context.
 Naming can be customized by explicitly providing a schema as a quotation and using **Literal** naming strategy.
 Example:
@@ -214,8 +215,7 @@ It will work but normalization and query generation will happen at runtime.
 {: .text-justify}
 
 #### Async drivers are poorly documented
-**PostgresAsyncContext** and **MySqlAsyncContext** use them so be prepared for some code digging
-if things work other way than you expected.
+**PostgresAsyncContext** and **MySqlAsyncContext** use them so be prepared for some code digging if things work other way than you expected.
 Use **JdbcContext** if you want to feel safe.
 {: .text-justify}
 
