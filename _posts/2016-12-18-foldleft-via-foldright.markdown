@@ -64,7 +64,7 @@ We need to define arguments for **foldLeft** in terms of **foldRight** arguments
 My first idea that worked was:
 {% highlight scala %}
 def reverse[A](as: List[A]): List[A] =
-        foldLeft(as, List[A]())((acc, a) => Cons(a, acc))
+        foldLeft(as, Nil: List[A])((acc, a) => Cons(a, acc))
 
 def foldRightViaFoldLeft[A, B](as: List[A], z: B)(f: (A, B) => B): B =
         foldLeft(reverse(as), z)((b, a) => f(a, b))
