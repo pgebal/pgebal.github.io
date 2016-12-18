@@ -45,8 +45,7 @@ The latter is tail recursive so we won't get into stack overflow when we use **f
 
 ### Understanding what folds do ###
 
-From now on, outside Scala code blocks we will use for convenience a syntax.
-For example we will represent lists as \\( [a_1, a_2, ..., a_n] \\).
+From now on, outside Scala code blocks we will represent lists as \\( [a_1, a_2, ..., a_n] \\).
 {: .text-justify}
 
 Having a list \\( [a_1, a_2, a_3, ..., a_n] \\), function \\( g: (B, A) => B \\) and element \\( z \in B \\) **foldLeft** returns the value of:
@@ -70,7 +69,7 @@ def foldRightViaFoldLeft[A, B](as: List[A], z: B)(f: (A, B) => B): B =
         foldLeft(reverse(as), z)((b, a) => f(a, b))
 {% endhighlight %}
 In this case arugment **g** for **foldLeft** is **((b, a) => f(a, b))**
-We will not get into a strict proof here, but let's understand why **foldRightViaFoldLeft** returns the value of expression \\( f(a_1, f(a_2, f(....,f(a_{n-1}, f(a_n, b))...))) \\).
+We won't get into a strict proof here, but let's understand why **foldRightViaFoldLeft** returns the value of expression \\( f(a_1, f(a_2, f(....,f(a_{n-1}, f(a_n, b))...))) \\).
 Let's start with list of size 1:
 {: .text-justify}
 
@@ -96,7 +95,7 @@ foldLeft([a_n, a_{n-1}, ..., a_1], z)(g) = foldRight([a_1, a_2, ..., a_n], z)(f)
 $$
 
 From that we'll conclude that it works for list of length n + 1.
-Notice that from definition of **foldLeft** we have that:
+From the definition of **foldLeft** we have that:
 
 $$
 foldLeft([a_{n+1}, a_n, ..., a_1], z)(g) = foldLeft([a_n, a_{n-1}, ..., a_1], g(z, a_{n+1}))(g)
@@ -111,7 +110,7 @@ $$
 
 We're done. That was [Mathematical induction][mathematical-induction].
 
-### Other solution ###
+### Solution that does not use reverse ###
 
 After solving this, I started to look for solution that does not use reverse.
 I couldn't come up with anything so I've peeked into [FPIS][functional-programming-in-scala-affiliate-link] answers and found out a tricky solution that does not use reverse.
