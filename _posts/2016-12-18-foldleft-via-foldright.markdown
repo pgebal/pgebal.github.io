@@ -45,7 +45,7 @@ The latter is tail recursive so we won't get into stack overflow when we use **f
 
 ### Understanding what folds do ###
 
-From now on, outside Scala code blocks we will represent lists as \\( [a_1, a_2, ..., a_n] \\).
+From now on, outside Scala code blocks we will represent lists of length n as \\( [a_1, a_2, ..., a_n] \\).
 {: .text-justify}
 
 Having a list \\( [a_1, a_2, a_3, ..., a_n] \\), function \\( g: (B, A) => B \\) and element \\( z \in B \\) **foldLeft** returns the value of:
