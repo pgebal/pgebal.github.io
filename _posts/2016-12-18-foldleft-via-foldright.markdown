@@ -52,7 +52,7 @@ Having a list \\( [a_1, a_2, a_3, ..., a_n] \\), function \\( g: (B, A) => B \\)
 \\( g(...g(g(g(z, a_1), a_2),a_3), ...), a_n) \\)
 
 **foldRight** for a list \\( [a_1, a_2, a_3, ..., a_{n-1}, a_n] \\), function \\( f: (A, B) => B \\) and element \\( z \in B \\) returns the value of expression:
-\\( f(a_1, f(a_2, f(....,f(a_{n-1}, f(a_n, b))...))) \\)
+\\( f(a_1, f(a_2, f(....,f(a_{n-1}, f(a_n, z))...))) \\)
 
 ### Understanding what we need to do ###
 
