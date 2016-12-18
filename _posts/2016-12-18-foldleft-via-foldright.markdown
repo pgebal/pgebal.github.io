@@ -10,8 +10,8 @@ excerpt: Solution to the puzzle.
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-There is a great exercise in [Functional programming in Scala][functional-programming-in-scala-affiliate-link] that forces you to understand how **List**'s **foldRight** and **foldLeft** work.
-It requires you to implement **foldRight** in terms of **foldLeft**.
+There is a great exercise in [Functional programming in Scala][functional-programming-in-scala-affiliate-link] that encourages you to understand how **List**'s **foldRight** and **foldLeft** work.
+It requires implementing **foldRight** in terms of **foldLeft**.
 Following piece of code introduces data structures and methods that we will deal with in this post:
 {% highlight scala %}
 sealed trait List[+A]
