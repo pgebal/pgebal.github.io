@@ -3,7 +3,7 @@ layout: post
 title: "A short one: foldRight via foldLeft"
 date: 2016-12-18 14:00:00 +0100
 categories: articles
-tags: [scala, functional-programming, functional programming, induction]
+tags: [scala, functional programming, folds]
 excerpt: Solution to the puzzle.
 comments: true
 share: true

@@ -3,7 +3,7 @@ layout: post
 title:  "Type class pattern"
 date:   2016-11-27 11:00:00 +0100
 categories: articles
-tags: [scala, functional, programming, spray, json, typeclass, type class]
+tags: [scala, functional programming, typeclass]
 excerpt: An explanation of type class pattern.
 comments: true
 share: true
