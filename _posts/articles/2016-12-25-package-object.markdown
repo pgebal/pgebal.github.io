@@ -22,7 +22,7 @@ object `package` {
 }
 {% endhighlight %}
 
-Now in other files in **com.pawelgebal.pobj.user** package you can use that types without importing them.
+Now in other files in **com.pawelgebal.pobj.user** package you can use those types without importing them.
 {: .text-justify}
 {% highlight scala %}
 package com.pawelgebal.pobj.user

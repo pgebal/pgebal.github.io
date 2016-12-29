@@ -5,6 +5,8 @@ date:   2016-11-20 20:11:00 +0100
 categories: articles
 tags: [scala, functional programming, eta expansion]
 excerpt: How Scala uses eta-expansion to make your life easier.
+comments: true
+share: true
 ---
 A method:
 {% highlight scala %}
