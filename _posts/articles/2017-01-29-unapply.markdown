@@ -10,11 +10,11 @@ share: true
 ---
 
 During a job interview I was asked to implement unapply and it didn't go smoothly.
-This post will make you understand what unapply does and what you need it for so you won't do the same mistake that I did.
+This post will make you understand what unapply does, and what you need it for so you won't make the same mistake that I made.
 {: .text-justify}
 
 *unapply* is an "deconstruction" method that extracts values from an instance of a class.
-[Usually](#requirements-for-unapply-return-type) it returns an *Option[TupleN[...]]* where *n* is the number of extracted values.
+[Usually](#requirements-for-unapply-return-type) it returns an *Option[TupleN[...]]*, where *n* is the number of extracted values.
 Let's have a class:
 {: .text-justify}
 {% highlight scala %}
@@ -29,8 +29,8 @@ user match {
 }
 {% endhighlight %}
 scala looks for *User.unapply* and calls it passing *user* as the argument.
-The method shall return a value of *Option[(String, String)]*.
-It the value is *Some(("pawel", "pawel@gmail.com"))* the expression matches and prints "Hello Paweł".
+The method should return a value of *Option[(String, String)]*.
+If the value is *Some(("pawel", "pawel@gmail.com"))* the expression matches and prints "Hello Paweł".
 {: .text-justify}
 
 To make this code work we have to create a User companion object and implement *unapply*.
@@ -41,7 +41,7 @@ object User {
 }
 {% endhighlight %}
 
-Putting all the pieces together we have:
+Putting all the pieces together, we have:
 {% highlight scala %}
 class User(val login: String, val email: String)
 
@@ -56,18 +56,18 @@ user match {
 }
 {% endhighlight %}
 Paste it into Intellij Idea scala worksheet to see what happens if you change return type of *User.unnaply* to *Option[String]*.
-Normally you would make *User* a case class and it would come with all the goodies like *unapply* implemented.
+Normally you would make *User* a case class, and it would come with all the goodies like *unapply* implemented.
 
-If that was your first *unapply* - be happy, now you know what happens under the hood and you can do better than me on job interviews.
-If you have any questions leave a comment below.
+If that was your first *unapply*, be happy, now you know what happens under the hood and you can do better than me on job interviews.
+If you have any questions, leave them in a comment below.
 {: .text-justify}
 
 ##### Requirements for unapply return type
 
-Since scala 2.11.1 the requirement for return type of unapply is that it has to be a structural type with methods:
+Since scala 2.11.1 the requirement for return type of *unapply* is that it has to be a structural type with methods:
 {: .text-justify}
 {% highlight scala %}
 def isEmpty: Boolean
 def get: T
 {% endhighlight %}
-Option[T] satisfies this requirement.
+*Option[T]* satisfies this requirement.
