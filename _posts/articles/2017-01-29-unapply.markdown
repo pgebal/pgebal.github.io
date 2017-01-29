@@ -1,0 +1,73 @@
+---
+layout: post
+title: "A short one: unapply 101"
+date: 2017-01-29 14:00:00 +0100
+categories: articles
+tags: [scala, functional programming, pattern matching, unapply]
+excerpt: Things you need to know about unapply.
+comments: true
+share: true
+---
+
+During a job interview I was asked to implement unapply and it didn't go smoothly.
+This post will make you understand what unapply does and what you need it for so you won't do the same mistake that I did.
+{: .text-justify}
+
+*unapply* is an "deconstruction" method that extracts values from an instance of a class.
+[Usually](#requirements-for-unapply-return-type) it returns an *Option[TupleN[...]]* where *n* is the number of extracted values.
+Let's have a class:
+{: .text-justify}
+{% highlight scala %}
+class User(val login: String, val email: String)
+{% endhighlight %}
+When the following pattern-match expression is encountered:
+{: .text-justify}
+{% highlight scala %}
+user match {
+  case User("pawel", "pawel@gmail.com") => println("Hello Paweł")
+  ...
+}
+{% endhighlight %}
+scala looks for *User.unapply* and calls it passing *user* as the argument.
+The method shall return a value of *Option[(String, String)]*.
+It the value is *Some(("pawel", "pawel@gmail.com"))* the expression matches and prints "Hello Paweł".
+{: .text-justify}
+
+To make this code work we have to create a User companion object and implement *unapply*.
+{: .text-justify}
+{% highlight scala %}
+object User {
+  def unapply(user: User): Option[(String, String)] = Some((user.login, user.email))
+}
+{% endhighlight %}
+
+Putting all the pieces together we have:
+{% highlight scala %}
+class User(val login: String, val email: String)
+
+object User {
+  def unapply(user: User): Option[(String, String)] = Some((user.login, user.email))
+}
+
+val user = new User("pawel", "pawel@gmail.com")
+user match {
+  case User("pawel", "pawel@gmail.com") => println("Hello Paweł")
+  case _ => println("I don't know you")
+}
+{% endhighlight %}
+Paste it into Intellij Idea scala worksheet to see what happens if you change return type of *User.unnaply* to *Option[String]*.
+Normally you would make *User* a case class and it would come with all the goodies like *unapply* implemented.
+
+If that was your first *unapply* - be happy, now you know what happens under the hood and you can do better than me on job interviews.
+If you have any questions leave a comment below.
+{: .text-justify}
+
+##### Requirements for unapply return type
+
+Since scala 2.11.1 the requirement for return type of unapply is that it has to be a structural type with methods:
+{: .text-justify}
+{% highlight scala %}
+def isEmpty: Boolean
+def get: T
+{% endhighlight %}
+Option[T] satisfies this requirement.

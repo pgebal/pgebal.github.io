@@ -10,6 +10,10 @@
 	@include clearfix;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .entry,
 .hentry {
 	@include clearfix;
