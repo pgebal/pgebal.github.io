@@ -90,7 +90,7 @@ val evensLongerThanOneDigit: FilterMonadic[Int, List[Int]] =
 evensLongerThanOneDigit.foreach(println)    
 {% endhighlight %}
 *evensLongerThanOneDigit* is a *WithFilter* with a predicate that is a conjunction of *isEven* and *isLongerThanOneDigit*.
-The code above will print all natural numbers from range (0, 100) that are even and longer that one digit in their decimal representation.
+The code above will print all natural numbers from range [0, 1000) that are even and longer that one digit in their decimal representation.
 {: .text-justify}
 
 Now you know that if you want to efficiently *map* or *flatMap* over filtered traversable you should use *withFilter*.
