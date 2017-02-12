@@ -11,7 +11,7 @@ share: true
 
 I've been using Scala for over a year, so I thought it's finally the time to learn how for comprehensions work under the hood.
 While studying this topic I bumped into *TraversableLike.withFilter* method.
-I've never been using *withFilter* explicitly, which is bad, because I should have started using it a long time ago.
+I have never used *withFilter* explicitly, which is bad, because I should have started using it a long time ago.
 You should do the same and in this post you will find out why.
 {: .text-justify}
 
@@ -25,7 +25,7 @@ def filter(p: A => Boolean): Repr
 def withFilter(p: A => Boolean): FilterMonadic[A, Repr]
 {% endhighlight %}
 
-*filter* is eager and with every call returns a new container that contains only the elements satisfying predicate *p*, and *withFilter* does not traverse the container but gets you a *FilterMonadic*, which is:
+*filter* is eage,r and with every call returns a new container that contains only the elements satisfying predicate *p*, and *withFilter* does not traverse the container, but gets you a *FilterMonadic*, which is:
 {: .text-justify}
 {% highlight scala %}
 trait FilterMonadic[+A, +Repr] extends Any {
@@ -36,7 +36,7 @@ trait FilterMonadic[+A, +Repr] extends Any {
 }
 {% endhighlight %}
 
-Here's an implementation of *FilterMonadic* that *TraversableLike* uses (*p* is the predicate by witch we filter):
+Here's an implementation of *FilterMonadic* that *TraversableLike* uses (*p* is the predicate by which we filter):
 {: .text-justify}
 {% highlight scala %}
 class WithFilter(p: A => Boolean) extends FilterMonadic[A, Repr] {
@@ -65,7 +65,7 @@ class WithFilter(p: A => Boolean) extends FilterMonadic[A, Repr] {
      new WithFilter(x => p(x) && q(x))
 }      
 {% endhighlight %}
-Notice that *WithFilter* wraps your *TraversableLike* and doesn't do any work until values are pulled from the container in *for* loops.
+Notice that *WithFilter* wraps your *TraversableLike*, and doesn't do any work until values are pulled from the container in *for* loops.
 
 *WithFilter* does not implement *filter* method, so the following piece of code won't compile:
 {: .text-justify}
