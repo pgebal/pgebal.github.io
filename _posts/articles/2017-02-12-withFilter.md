@@ -25,7 +25,7 @@ def filter(p: A => Boolean): Repr
 def withFilter(p: A => Boolean): FilterMonadic[A, Repr]
 {% endhighlight %}
 
-*filter* is eage,r and with every call returns a new container that contains only the elements satisfying predicate *p*, and *withFilter* does not traverse the container, but gets you a *FilterMonadic*, which is:
+*filter* is eager and with every call returns a new container that contains only the elements satisfying predicate *p*, and *withFilter* does not traverse the container, but gets you a *FilterMonadic*, which is:
 {: .text-justify}
 {% highlight scala %}
 trait FilterMonadic[+A, +Repr] extends Any {
