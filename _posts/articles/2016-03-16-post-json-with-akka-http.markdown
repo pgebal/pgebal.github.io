@@ -4,7 +4,7 @@ title: "A short one: post a json with akka HTTP client-side API"
 date: 2017-03-16 14:00:00 +0100
 categories: articles
 tags: [scala, functional programming, json, akka, akka http]
-excerpt:
+excerpt: Read this if you are struggling to post a json.
 comments: true
 share: true
 ---
