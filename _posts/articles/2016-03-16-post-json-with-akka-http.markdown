@@ -10,10 +10,10 @@ share: true
 ---
 
 As a newcomer to akka HTTP it took me a while to figure out how to make a post request with json body using request-level akka HTTP client-side API.
-I wrote this article, so you don't have to go the same path that I went.
+I wrote this article, so you don't have to go the same way that I went.
 {: .text-justify}
 
-Imagine you start apps using a service that provides a REST API over HTTP.
+Imagine that you start apps using a service that provides a REST API over HTTP.
 You do it by posting jsons on /apps resource. Example json:
 {: .text-justify}
 {% highlight json %}
@@ -39,10 +39,10 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpV
 libraryDependencies += "io.spray" %% "spray-json" % "1.3.3"
 {% endhighlight %}
 
-*SprayJsonSupport* trait and *akka.http.scaladsl.marshalling.Marshal* will help us to turn *Application* instance into a *RequestEntity* with a json body.
-Then we'll construct a request and post it via akka HTTP client.
-We are going to need a *Marshaller[App, RequestEntity]*.
-We'll build it in two steps.
+*SprayJsonSupport* trait and *akka.http.scaladsl.marshalling.Marshal* help us to turn *Application* instance into a *RequestEntity* with a json body.
+Then we construct a request and post it via akka HTTP client.
+We need a *Marshaller[App, RequestEntity]*.
+We build it in two steps.
 Let's start with a trait that provides *RootJsonWriter* for *Application*.
 {: .text-justify}
 
