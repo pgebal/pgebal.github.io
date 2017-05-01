@@ -1,0 +1,63 @@
+---
+layout: post
+title: "Five books every programmer must read"
+date: 2017-04-30 14:00:00 +0100
+categories: articles
+tags: [programming, books]
+excerpt: Books so good you can't ignore them.
+comments: true
+share: true
+---
+
+During my first year as a software developer I have not read a single book that would boost skills I needed for my job.
+Back then girls, fitness and leisure where my top priorities.
+I am still happy about girls and fitness but looking back it was not a wise choice to chill as much as I did.
+I should have read books back then and I should have started with those five.
+
+##### 1. [<u>How to Win Friends and Influence People</u>][winfriends-amazon] by Dale Carnagie
+I felt my social skills were decent but I still have learned a lot by reading this book.
+It applies to professional and private life.
+Want to get along with your family, lovers, team, manager and all the others? Want to be a good leader? Want to know how to win people to your ways of thinking?
+This book can teach you that.
+Without any tricks, just by being sincere and gentle.
+
+##### 2. [<u>Deep Work: Rules for Focused Success in a Distracted World</u>][deepwork-amazon] by Cal Newport
+That one was released last year and it's great.
+Writing code is a cognitively demanding tasks.
+To be productive you need to focus and move all distractions out of your way.
+Cal Newport (born 1982) is an associate professor in the department of computer science at Georgetown University and knows thing or two about staying focused.
+He delivers scientific papers on computer science and published five books with advice how to effectively work on demanding tasks.
+In Deep work he shares his and other's people views on how to stay focused, work deep and deliver things in a way that does not make you to work on weekends.
+Apply what the book says, code better and faster and send professor Newport a thank you letter.
+
+##### 3. [<u>Clean Code: A Handbook of Agile Software Craftsmanship</u>][cleancode-amazon] by Robert Martin
+It's a gem.
+If you want to code, do it clean.
+If you want to do it clean, read this book and do what Robert Martin says.
+Period.
+
+##### 4. [<u>The Clean Coder: A Code of Conduct for Professional Programmers</u>][cleancode2-amazon] by Robert Martin
+Coding for money does not make you a professional software engineer.
+Applying what Robert Martin says in this book will make a professional.
+This is a comprehensive tutorial on becoming a craftsman.
+That book will help you to understand what being a professional means when it comes to your code, obligations you make, and ways how you treat other people.
+There are harsh words of truth in this book.
+But you may need them if you are willing to put the work to better yourself as a developer.
+
+##### 5. [<u>Soft Skills: The software developer's life manual</u>][simpleprogrammer-amazon] by John Sonmez
+How to Win Friends and Influence People will not teach you all the soft skills you need.
+Neither this book.
+But it is still a great read.
+It is a manual on how to make you career move forward and what to do with the money you earn.
+There are tips on how to squeeze some more value out of your free time.
+If you are not regularly hitting the gym yet, this book might get you started with fitness.
+John Sonmez has a [youtube channel][simpleprogrammer-youtube] and a [blog][simpleprogrammer-blog].
+Check it out, he puts lots of valuable advice there.
+
+[simpleprogrammer-youtube]: https://www.youtube.com/user/jsonmez
+[simpleprogrammer-blog]: https://simpleprogrammer.com/
+[winfriends-amazon]: https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034
+[deepwork-amazon]: https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692/
+[cleancode-amazon]: https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+[cleancode2-amazon]: https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073
+[simpleprogrammer-amazon]: https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397
