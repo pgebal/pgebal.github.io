@@ -15,8 +15,7 @@ If you want to stream a big text file from HDFS, take a reactive approach and re
 A great way of going reactive in Scala is using Akka Streams.
 If you know nothing about Akka Streams go read [this][akka-streams-intro].
 Akka Streams provides *StreamConverters.fromInputStream* method that creates a *Source* from a file content.
-Emitted elements are *chunkSize* bytes, except for the final element that can be smaller.
-*chunkSize* is an argument with a default value of 8192.
+Emitted elements are *chunkSize* bytes (default value of 8192), except for the final element that can be smaller.
 Knowing that, let's get an *InputStream* to a file stored on HDFS:
 {: .text-justify}
 {% highlight scala %}
@@ -48,14 +47,14 @@ StreamConverters
 {% endhighlight %}
 After creating the *Source*, we connect it to a *Flow* using *.via* method.
 *Framing.delimiter* flow buffers read bytes and chunks them into frames using a specific byte-sequence to mark frame boundaries.
-In our case that special byte-sequence is the end of line character.
-If there is no delimiter in a block of *maximumFrameLength*, stream fails.
+In our case that special sequence is the end of line character.
+If there are no delimiters in a block of *maximumFrameLength*, stream fails.
 *Framing.delimiter* flow produces *ByteStrings*, which need to be mapped to utf-8 strings to make them human readable.
-Finally we connect our *Flow* to a Sink that prints each input element and run it using *.runWith*.
+Finally we connect our *Flow* to a *Sink* that prints each input element and run it using *.runWith*.
+That's how Akka Streams rolls with your big files.
 {: .text-justify}
 
-There is a full example on my [github][hdfs-stream-github]
-
+Check out a full example on my [github][hdfs-stream-github]
 
 
 [akka-streams-intro]: http://doc.akka.io/docs/akka/2.5.3/scala/stream/stream-introduction.html
