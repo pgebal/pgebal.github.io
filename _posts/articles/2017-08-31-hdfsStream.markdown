@@ -21,9 +21,6 @@ Knowing that, let's get an *InputStream* to a file stored on HDFS:
 {% highlight scala %}
 import org.apache.hadoop.fs.{FileSystem, Path}
 
-// sets name for user that is used when connecting to HDFS
-System.setProperty("HADOOP_USER_NAME", hadoopUserName)
-
 // sets HDFS host
 val configuration = new Configuration()
 configuration.set("fs.defaultFS", host)
